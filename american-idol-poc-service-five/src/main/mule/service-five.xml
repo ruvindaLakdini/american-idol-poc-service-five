@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="dbe9b2a0-a6ec-4a44-9145-8701a27afac2" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="service-fiveFlow" doc:id="18ddd6dd-019e-4886-b923-bef441552be6" >
+		<http:listener doc:name="Listener" doc:id="634940a0-901e-45c4-a3b8-e6cc725e885d" config-ref="HTTP_Listener_config" path="/service5"/>
+		<set-payload value='#["service five"]' doc:name="Set Payload" doc:id="91f71d1d-5555-4e34-8aa8-a5463cc7bd02" />
+	</flow>
+</mule>
